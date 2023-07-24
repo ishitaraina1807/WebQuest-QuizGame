@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+body{
+  background-color: #969e42;
+  background-image: url(Black\ Blob-265186.webp);
+  background-size: cover;
+  background-size: 700px 500px;
+  background-repeat: no-repeat;
+  background-position: right 16rem;
+  font-family: 'Noto Sans', sans-serif;
+}
+.container{
+  max-width: 39rem;
+  margin-top: 9rem;
+  margin-left: 7rem;
+  color: white;
+}
+.container h1{
+font-weight: bolder;
+font-size: 3rem;
+line-height: 3rem;
+margin-bottom: 1rem;
+}
+.container h2{
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+}
+@media screen and (max-width: 800px) {
+  .container{
+    max-width: 25rem;
+    margin-left: 4rem;
+  }
+}
+@media screen and (max-width: 460px) {
+  .container{
+    max-width: 20rem;
+    margin-left: 2rem;
+  }
+}
