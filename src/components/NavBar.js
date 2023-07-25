@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import testwebd from './testwebd.png'
+import { Link } from 'react-router-dom';
+
 export default class NavBar extends Component {
   render() {
+
     return (
       <div>
 <nav className="bg-custom-black">  
@@ -14,9 +17,24 @@ export default class NavBar extends Component {
         </div>
         <div className="hidden sm:ml-6 sm:block">
           <div className="flex space-x-4">
-            <a href="#" className="text-white hover:bg-custom-green hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
-            <a href="#" className="text-white hover:bg-custom-green hover:text-white rounded-md px-3 py-2 text-sm font-medium">Quizes</a>
-            <a href="#" className="text-white hover:bg-custom-green hover:text-white rounded-md px-3 py-2 text-sm font-medium">Features</a>
+          <Link
+                    to="/"
+                    className="text-white hover:bg-custom-green hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                  >
+                    Home
+                  </Link>
+                  <Link
+                    to="/quizzes"
+                    className="text-white hover:bg-custom-green hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                  >
+                    Quizzes
+                  </Link>
+                  <Link
+                    to="/features"
+                    className="text-white hover:bg-custom-green hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                  >
+                    Features
+                  </Link>
           </div>
         </div>
 
@@ -26,9 +44,9 @@ export default class NavBar extends Component {
 
   <div className="sm:hidden" id="mobile-menu">
     <div className="space-y-1 px-2 pb-3 pt-2">
-      <a href="#" className="text-white hover:bg-custom-green hover:text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Home</a>
-      <a href="#" className="text-white hover:bg-custom-green hover:text-white block rounded-md px-3 py-2 text-base font-medium">Quizes</a>
-      <a href="#" className="text-white hover:bg-custom-green hover:text-white block rounded-md px-3 py-2 text-base font-medium">Features</a>
+      <a href="/" className="text-white hover:bg-custom-green hover:text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Home</a>
+      <a href="/Quizzes" className="text-white hover:bg-custom-green hover:text-white block rounded-md px-3 py-2 text-base font-medium">Quizzes</a>
+      <a href="/Features" className="text-white hover:bg-custom-green hover:text-white block rounded-md px-3 py-2 text-base font-medium">Features</a>
 
     </div>
   </div>
