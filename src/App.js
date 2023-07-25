@@ -1,21 +1,22 @@
-import "./App.css";
-import Quizzes from "./components/Quizzes";
-import NavBar from "./components/NavBar";
-import Introduction from "./components/Introduction";
-import {Router, Route } from 'react-router-dom';
+import React from 'react';
+import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Quizzes from './components/Quizzes';
+import NavBar from './components/NavBar';
+import Introduction from './components/Introduction';
 
 function App() {
   return (
-    <Router>
-      <>
-        <NavBar />
-        <div className='app'>
-          <Route path="/" exact component={Introduction} />
-          <Route path="/quizzes" component={Quizzes} />
-        </div>
-      </>
-    </Router>
+    <div>
+      <NavBar />
+      <div className='app'>
+        <Routes>
+          <Route path="/" element={<Introduction />} />
+          <Route path="/quizzes" element={<Quizzes />} />
+        </Routes>
+      </div>
+    </div>
   );
-  }
+}
 
 export default App;
