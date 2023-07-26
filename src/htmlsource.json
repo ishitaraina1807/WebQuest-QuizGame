@@ -1,0 +1,53 @@
+[
+    {
+      "question": "What does HTML stand for?",
+      "options": ["Hyper Text Markup Language", "Hyperlinks and Text Markup Language", "Home Tool Markup Language", "Hyper Tool Markup Language"],
+      "correctAnswer": "Hyper Text Markup Language"
+    },
+    {
+      "question": "Which of the following HTML Elements is used for making any text bold?",
+      "options": ["<p>", "<i>", "<li>", "<b>"],
+      "correctAnswer": "<b>"
+    },
+    {
+      "question": "Which of the following HTML element is used for creating an unordered list?",
+      "options": ["<ui>", "<i>", "<em>", "<ul>"],
+      "correctAnswer": "<ul>"
+    },
+    {
+      "question": "Which of the following HTML Elements is used for making any text bold?",
+      "options": ["<p>", "<i>", "<li>", "<b>"],
+      "correctAnswer": "<b>"
+    },
+    {
+      "question": "Which of the following characters indicate closing of a tag? ",
+      "options": [".", "/", "//", "!"],
+      "correctAnswer": "/"
+    },
+    {
+      "question": "What is the font-size of the h1 heading tag?",
+      "options": ["1 rem", "2 em", "2.17 em", "1.5 rem"],
+      "correctAnswer": "2 em"
+    },
+    {
+      "question": "How many heading tags are there in HTML5?",
+      "options": ["2", "4", "6", "3"],
+      "correctAnswer": "6"
+    },
+    {
+      "question": "How many attributes are there in HTML5?",
+      "options": ["1", "2", "4", "None of the above"],
+      "correctAnswer": "None of the above"
+    },
+    {
+      "question": "Which of the following attributes is used to add link to any element?",
+      "options": ["link", "href", "ref", "newref"],
+      "correctAnswer": "href"
+    },
+    {
+      "question": "Which of the following tags is used to add a line-break in HTML?",
+      "options": ["<br>", "<break>", "</br>", "</break>"],
+      "correctAnswer": "<br>"
+    }
+  ]
+  
