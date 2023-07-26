@@ -19,7 +19,7 @@ export default class NavBar extends Component {
           <div className="flex space-x-4">
           <Link
                     to="/"
-                    className="text-white hover:bg-custom-green hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                    className="text-white hover:bg-custom-green hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current
                   >
                     Home
                   </Link>
@@ -44,9 +44,24 @@ export default class NavBar extends Component {
 
   <div className="sm:hidden" id="mobile-menu">
     <div className="space-y-1 px-2 pb-3 pt-2">
-      <a href="/" className="text-white hover:bg-custom-green hover:text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Home</a>
-      <a href="/Quizzes" className="text-white hover:bg-custom-green hover:text-white block rounded-md px-3 py-2 text-base font-medium">Quizzes</a>
-      <a href="/Features" className="text-white hover:bg-custom-green hover:text-white block rounded-md px-3 py-2 text-base font-medium">Features</a>
+    <Link
+                    to="/"
+                    className="text-white hover:bg-custom-green hover:text-white block rounded-md px-3 py-2 text-base font-medium" aria-current
+                  >
+                    Home
+                  </Link>
+                  <Link
+                    to="/quizzes"
+                    className="text-white hover:bg-custom-green hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+                  >
+                    Quizzes
+                  </Link>
+                  <Link
+                    to="/features"
+                    className="text-white hover:bg-custom-green hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+                  >
+                    Features
+                  </Link>
 
     </div>
   </div>
