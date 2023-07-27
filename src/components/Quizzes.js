@@ -17,13 +17,13 @@ export default class Quizzes extends Component {
                   </Link>
                   <Link
                     to="/html-quiz"
-                    className="rounded-md bg-custom-green px-3.5 py-3.5 text-lg font-semibold text-white shadow-sm hover:bg-custom-pink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" 
+                    className="rounded-md bg-custom-green px-3.5 py-3.5 text-lg font-semibold text-white shadow-sm hover:bg-custom-purple focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" 
                   >
                     CSS
                   </Link>
                   <Link
                     to="/html-quiz"
-                    className="rounded-md bg-custom-green px-3.5 py-3.5 text-lg font-semibold text-white shadow-sm hover:bg-custom-pink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" 
+                    className="rounded-md bg-custom-green px-3.5 py-3.5 text-lg font-semibold text-white shadow-sm hover:bg-custom-darkyellow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" 
                   >
                     JavaScript
                   </Link>
