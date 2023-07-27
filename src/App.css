@@ -13,7 +13,7 @@ body{
   max-width: 39rem;
   margin-top: 9rem;
   margin-left: 7rem;
-  color: white;
+  color: #eaecd9;
 }
 .container h1{
 font-weight: bolder;
@@ -38,9 +38,65 @@ margin-bottom: 1rem;
   display: flex;
 }
 .htmlcard{
-  color: white;
+  color: #eaecd9;
   background-color: black;
 }
+/* CSS for the "fade" transition */
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+.wrapper{
+  font-size: 1.7rem;
+  margin-top: 3rem;
+  max-width: 48rem;
+  height: 36rem ;
+  margin-left: 5rem;
+  padding: 2rem;
+  line-height: 4rem;
+  background-color: #eaecd9;
+  border-radius: 10px;
+}
+.selected{
+  background-color: #969e42;
+  border-radius: 10px;
+}
+.questions{
+  font-weight: bold;
+}
+.button{
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  padding: 0 10px;
+  margin-top: 1rem;
+}
+.prev-button{
+  margin-right: 18rem;
+}
+.next-button{
+margin-left: 9rem ;
+}
+.prev-button:hover{
+  background-color: #deb657;
+}
+.next-button:hover{
+  background-color: #bda2f7;
+}
+
 @media screen and (max-width: 800px) {
   .container{
     max-width: 25rem;
@@ -70,4 +126,6 @@ margin-bottom: 1rem;
     gap: 1rem;
   }
 }
+
+
 
