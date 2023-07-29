@@ -1,100 +1,112 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
 
 body{
-  background-color: #969e42;
-  background-image: url(Black\ Blob-265186.webp);
-  background-size: cover;
-  background-size: 700px 500px;
+  background-color: #fff7f0;
+  background-image: url(bg-intro.png);
+  background-size: fill;
   background-repeat: no-repeat;
-  background-position: right 16rem;
   font-family: 'Noto Sans', sans-serif;
 }
 .container{
-  max-width: 39rem;
-  margin-top: 9rem;
-  margin-left: 7rem;
-  color: #eaecd9;
+  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 6rem;
 }
 .container h1{
+max-width: 39rem;
 font-weight: bolder;
 font-size: 3rem;
 line-height: 3rem;
 margin-bottom: 1rem;
+color: #292a29;
 }
 .container h2{
+  max-width: 39rem;
   font-size: 1.5rem;
   line-height: 1.8rem;
+  color: #989189;
 }
 .section{
   margin-top: 0;
   margin-left: 5rem;
 }
 .card{
-  max-width: 35rem;
-  padding: 5rem;
-  border-radius: 10px;
+display: flex;
+justify-content: center; 
+flex-direction: column;
+align-items: center; 
+border: #ea7564 solid 5px;
+padding: 5rem;
+margin-top: 12rem;
 }
-.buttonss{
-  display: flex;
-}
+
 .htmlcard{
   color: #eaecd9;
   background-color: black;
 }
 /* CSS for the "fade" transition */
-.fade-enter {
+/* .fade-enter {
   opacity: 0;
 }
 
 .fade-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease;
+  opacity: 0;
+  transition: opacity 200ms linear;
 }
 
 .fade-exit {
-  opacity: 1;
+  opacity: 0;
 }
 
 .fade-exit-active {
-  opacity: 0;
-  transition: opacity 500ms ease;
+  opacity: 0.5;
+  transition: opacity 200ms ease-in-out;
+} */
+.box{
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  height: 90vh; 
 }
 .wrapper{
-  font-size: 1.7rem;
-  margin-top: 3rem;
-  max-width: 48rem;
-  height: 36rem ;
-  margin-left: 5rem;
-  padding: 2rem;
+  font-size: 1.5rem;
   line-height: 4rem;
-  background-color: #eaecd9;
-  border-radius: 10px;
+  max-width: 40rem;
+  border: #ea7564 5px solid;
+  padding: 2rem;
+  border-bottom-right-radius: 150px;
 }
 .selected{
-  background-color: #969e42;
+  background-color: #ea7564;
   border-radius: 10px;
 }
 .questions{
   font-weight: bold;
+  text-decoration: underline;
 }
 .button{
-  background-color: black;
-  color: white;
+  background-color: #ea7564;
+  color: #fff7f0;
   border-radius: 10px;
-  padding: 0 10px;
+  padding: 0 20px;
+  margin-top: 1rem;
+  margin: 0 5rem;
+}
+.button:hover{
+  background-color: black;
+}
+.show-button{
+  color: #eaecd9;
+  background-color: #292a29;
+  border-radius: 10px;
+  padding: 0 20px;
   margin-top: 1rem;
 }
-.prev-button{
-  margin-right: 18rem;
-}
-.next-button{
-margin-left: 9rem ;
-}
-.prev-button:hover{
-  background-color: #deb657;
-}
-.next-button:hover{
-  background-color: #bda2f7;
+.show-button:hover{
+  background-color: #ea7564;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 800px) {
@@ -107,6 +119,12 @@ margin-left: 9rem ;
   }
   .card{
     max-width: 29rem;
+  }
+  .prev-button{
+    margin-right: 9rem;
+  }
+  .wrapper{
+    margin-left: 0;
   }
 
 }
@@ -125,6 +143,16 @@ margin-left: 9rem ;
     flex-direction: column;
     gap: 1rem;
   }
+  .wrapper{
+    height: auto;
+    border-radius: 0;
+  }
+  .prev-button{
+    margin-right: 0;
+  }
+  .next-button{
+    margin-left: 5rem ;
+    }
 }
 
 
