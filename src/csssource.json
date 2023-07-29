@@ -1,0 +1,103 @@
+[
+    {
+      "question": "What is the correct CSS syntax to change the font family of an element?",
+      "options": [
+        "font-family: Arial;",
+        "font: Arial;",
+        "family: Arial;",
+        "font-family: 'Arial';"
+      ],
+      "correctAnswer": "font-family: Arial;"
+    },
+    {
+      "question": "Which CSS property is used to control the space between lines of text?",
+      "options": [
+        "line-height",
+        "line-spacing",
+        "text-spacing",
+        "spacing"
+      ],
+      "correctAnswer": "line-height"
+    },
+    {
+      "question": "Which CSS property is used to create rounded corners for an element?",
+      "options": [
+        "border-radius",
+        "corner-radius",
+        "rounded-style",
+        "corner-style"
+      ],
+      "correctAnswer": "border-radius"
+    },
+    {
+      "question": "In CSS, which value is used to make an element completely invisible?",
+      "options": [
+        "transparent",
+        "hidden",
+        "collapse",
+        "none"
+      ],
+      "correctAnswer": "hidden"
+    },
+    {
+      "question": "Which CSS property is used to add shadows to boxes?",
+      "options": [
+        "box-shadow",
+        "shadow",
+        "box-effect",
+        "shadow-box"
+      ],
+      "correctAnswer": "box-shadow"
+    },
+    {
+      "question": "Which CSS property is used to change the size of an image to fit its container?",
+      "options": [
+        "image-size",
+        "fit-image",
+        "resize",
+        "object-fit"
+      ],
+      "correctAnswer": "object-fit"
+    },
+    {
+      "question": "Which CSS property is used to control the amount of space outside an element's borders?",
+      "options": [
+        "margin",
+        "padding",
+        "spacing",
+        "border-spacing"
+      ],
+      "correctAnswer": "margin"
+    },
+    {
+      "question": "In CSS, which property is used to control the order of how elements are stacked on top of each other?",
+      "options": [
+        "order",
+        "z-index",
+        "stacking-order",
+        "layer"
+      ],
+      "correctAnswer": "z-index"
+    },
+    {
+      "question": "Which CSS property is used to create an underline for text?",
+      "options": [
+        "text-style",
+        "text-decoration",
+        "underline",
+        "text-line"
+      ],
+      "correctAnswer": "text-decoration"
+    },
+    {
+      "question": "In CSS, which property is used to control the transparency of an element?",
+      "options": [
+        "opacity",
+        "transparent",
+        "visibility",
+        "display"
+      ],
+      "correctAnswer": "opacity"
+    }
+  ]
+  

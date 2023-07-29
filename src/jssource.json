@@ -1,0 +1,103 @@
+[
+    {
+      "question": "What is the correct way to declare a JavaScript variable?",
+      "options": [
+        "variable = 10;",
+        "var = 10;",
+        "int x = 10;",
+        "var x = 10;"
+      ],
+      "correctAnswer": "var x = 10;"
+    },
+    {
+      "question": "Which operator is used for strict equality check in JavaScript?",
+      "options": [
+        "==",
+        "=",
+        "===",
+        "!="
+      ],
+      "correctAnswer": "==="
+    },
+    {
+      "question": "Which built-in method is used to convert a string to uppercase in JavaScript?",
+      "options": [
+        "toUpperCase()",
+        "toUpperCaseCase()",
+        "toUpper()",
+        "upperCase()"
+      ],
+      "correctAnswer": "toUpperCase()"
+    },
+    {
+      "question": "In JavaScript, what is the result of '2' + 2?",
+      "options": [
+        "4",
+        "22",
+        "NaN",
+        "TypeError"
+      ],
+      "correctAnswer": "22"
+    },
+    {
+      "question": "Which function is used to print output in the browser console in JavaScript?",
+      "options": [
+        "console.log()",
+        "print()",
+        "console.write()",
+        "log()"
+      ],
+      "correctAnswer": "console.log()"
+    },
+    {
+      "question": "What does the 'typeof' operator return for an array?",
+      "options": [
+        "array",
+        "object",
+        "array",
+        "function"
+      ],
+      "correctAnswer": "object"
+    },
+    {
+      "question": "In JavaScript, how do you write a single-line comment?",
+      "options": [
+        "// This is a comment",
+        "' This is a comment",
+        "# This is a comment",
+        "/* This is a comment */"
+      ],
+      "correctAnswer": "// This is a comment"
+    },
+    {
+      "question": "Which method is used to remove the last element from an array in JavaScript?",
+      "options": [
+        "pop()",
+        "remove()",
+        "splice()",
+        "last()"
+      ],
+      "correctAnswer": "pop()"
+    },
+    {
+      "question": "What is the output of the following JavaScript code?\n\nvar x = 5;\nfunction add(y) {\n  return x + y;\n}\nvar result = add(3);",
+      "options": [
+        "3",
+        "8",
+        "5",
+        "TypeError"
+      ],
+      "correctAnswer": "8"
+    },
+    {
+      "question": "Which JavaScript method is used to convert a string to an integer?",
+      "options": [
+        "toInt()",
+        "parseInteger()",
+        "parseInt()",
+        "convertToInt()"
+      ],
+      "correctAnswer": "parseInt()"
+    }
+  ]
+  
