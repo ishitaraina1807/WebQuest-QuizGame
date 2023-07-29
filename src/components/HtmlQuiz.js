@@ -39,7 +39,7 @@ function HtmlQuiz({ quizData }) {
     }
 
 
-    // setAnsweredQuestions((prevAnsweredQuestions) => [...prevAnsweredQuestions, currentQuestionIndex]);
+    setAnsweredQuestions((prevAnsweredQuestions) => [...prevAnsweredQuestions, currentQuestionIndex]);
   };
 
   const isLastQuestion = currentQuestionIndex === quizData.length - 1;
@@ -51,33 +51,27 @@ function HtmlQuiz({ quizData }) {
   const questionLabels = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
 
   return (
-    <div className="QuizApp">
-      <TransitionGroup>
-        <CSSTransition
-          key={currentQuestionIndex}
-          classNames="fade"
-          timeout={500}
-        >
+    <div className='box'>
           {currentQuestion && (
             <div className='wrapper'>
               <p className='questions'>
-                <b> Ques: {questionLabels[currentQuestionIndex]}</b> {currentQuestion.question}
+                <b> Ques:{questionLabels[currentQuestionIndex]} </b> {currentQuestion.question}
               </p>
               <ul>
                 {currentQuestion.options.map((option, optionIndex) => (
                   <li
                     key={optionIndex}
-                    className={selectedOptionIndex === optionIndex ? 'selected' : ''}
+                    className={selectedOptionIndex === optionIndex ? 'selected': 'hover:bg-custom-red'}
                     onClick={() => handleOptionClick(optionIndex)}
                   >
-                    <span>
+                    <span className=''>
                       <b>{optionLabels[optionIndex]}.</b>
                     </span>
                     {option}
                   </li>
                 ))}
               </ul>
-              <button className='prev-button button'
+              <button className='button text-lg'
                 onClick={handlePrevQuestion}
                 disabled={isFirstQuestion} >
                 Previous
@@ -85,13 +79,11 @@ function HtmlQuiz({ quizData }) {
               {isLastQuestion ? (
                 <button onClick={handleNextQuestion}>Show Result</button>
               ) : (
-                <button className='next-button button' onClick={handleNextQuestion}>Next</button>
+                <button className='button text-lg' onClick={handleNextQuestion}>Next</button>
               )}
               <p>Score: {score}</p> 
             </div>
           )}
-        </CSSTransition>
-      </TransitionGroup>
     </div>
   );
 }
