@@ -5,7 +5,7 @@ export default class Quizzes extends Component {
   render() {
     return (
       <div>
-          <main className="grid min-h-full place-items-left bg-transparent">
+          <main className="grid min-h-full place-items-left bg-transparent quiz">
         <div className="text-left bg-transparent card">
           <h1 className="text-3xl font-bold tracking-tight text-custom-black sm:text-5xl">Select Your Category of Choice 🚀</h1>
           <div className="mt-10 flex items-center justify-left gap-x-6">
