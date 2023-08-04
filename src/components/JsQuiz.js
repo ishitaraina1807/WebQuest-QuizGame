@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import ResultComponent from './ResultComponent';
 
 function JsQuiz({ quizData }) {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -8,6 +7,28 @@ function JsQuiz({ quizData }) {
     const [score, setScore] = useState(0);
     const [answeredQuestions, setAnsweredQuestions] = useState([]);
     const [showResult, setShowResult] = useState(false);
+    
+    const ResultComponent = ({ score }) => {
+        const endTime = new Date();
+        const timeTaken = (endTime - startTime) / 1000; // Convert to seconds
+  
+        return (
+            <div className='result'>
+                <h2><b>Quiz Result:</b></h2>
+                <hr/>
+                <p><b>Your Score:</b> {score}</p>
+                <p><b>Time Taken:</b> {timeTaken} seconds</p>
+                <Link to="/" className='show-button text-lg'>
+                    Restart Quiz
+                </Link>
+            </div>
+        );
+    };
+    const [startTime, setStartTime] = useState(null);
+
+    useEffect(() => {
+        setStartTime(new Date());
+    }, []);
 
     const handleNextQuestion = () => {
         if (currentQuestionIndex === quizData.length - 1) {
@@ -61,12 +82,17 @@ function JsQuiz({ quizData }) {
 
     return (
         <div className='box'>
-
-            {currentQuestion && (
+            {showResult ? (
+                <div className='wrapper'>
+                    <ResultComponent score={score} />
+                </div>
+                ) : (
+            // {currentQuestion && (
                 <div className='wrapper'>
                     <p className='questions'>
-                        <b> Ques:{questionLabels[currentQuestionIndex]} </b> {currentQuestion.question}
+                    <b> Ques:{questionLabels[currentQuestionIndex]} </b> {currentQuestion.question}
                     </p>
+                    <hr/>
                     <ul>
                         {currentQuestion.options.map((option, optionIndex) => (
                             <li
@@ -87,7 +113,7 @@ function JsQuiz({ quizData }) {
                         Previous
                     </button>
                     {isLastQuestion ? (
-                        <Link to="/result" className='show-button text-lg' onClick={handleShowResult}>Show Result</Link>
+                        <button className='show-button text-lg' onClick={handleShowResult}>Show Result</button>
                     ) : (
                         <button className='button text-lg' onClick={handleNextQuestion}>Next</button>
                     )}
