@@ -10,7 +10,6 @@ import JsQuiz from './components/JsQuiz';
 import quizData from './htmlsource.json';
 import cssquizData from './csssource.json';
 import jsquizData from './jssource.json';
-import ResultComponent from './components/ResultComponent';
 
 function App() {
   return (
@@ -23,7 +22,6 @@ function App() {
           <Route path="/html-quiz" element={<HtmlQuiz quizData={quizData} />} />
           <Route path="/css-quiz" element={<CssQuiz quizData={cssquizData} />} />
           <Route path="/javascript-quiz" element={<JsQuiz quizData={jsquizData} />} />
-          <Route path="/result" element={<ResultComponent/>} />
         </Routes>
       </div>
     </div>
