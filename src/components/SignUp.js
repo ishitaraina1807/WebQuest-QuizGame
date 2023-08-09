@@ -38,21 +38,11 @@ const SignUp = () => {
       });
       console.log("New user created with credentials : ", user);
 
-      const studentData = {
-        name: values.name,
-        email: values.email,
-      };
-
-      // Use the user's UID as the document ID in Firestore
-      const docRef = doc(db, "students", user.uid);
-
-      await setDoc(docRef, studentData);
-      console.log("Document written with ID: ", user.uid);
-
-      navigate("/login");
+      
     } catch (e) {
       console.error("Error adding document: ", e);
-      setErrorMsg("Error creating user");
+      setErrorMsg("Already Signed UP");
+      navigate("/login");
     }
   };
 
@@ -120,7 +110,8 @@ const SignUp = () => {
                 Login
               </span>
             </div>
-            {errorMsg && <p className="text-red-500 mt-2 mb-2 text-sm flex justify-center">{errorMsg}</p>}
+            {errorMsg && <p className="text-red-800 mt-2 mb-2 text-sm flex justify-center">{errorMsg}</p>}
+
             <button
               type="submit"
               className="w-full bg-custom-black text-white rounded py-2 hover:text-custom-black hover:bg-white"
