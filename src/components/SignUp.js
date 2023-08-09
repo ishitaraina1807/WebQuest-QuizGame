@@ -23,6 +23,7 @@ const SignUp = () => {
       return;
     }
     setErrorMsg("");
+ 
 
     try {
       const userCredential = await createUserWithEmailAndPassword(
@@ -40,7 +41,6 @@ const SignUp = () => {
       const studentData = {
         name: values.name,
         email: values.email,
-        subjects: [],
       };
 
       // Use the user's UID as the document ID in Firestore
@@ -49,7 +49,7 @@ const SignUp = () => {
       await setDoc(docRef, studentData);
       console.log("Document written with ID: ", user.uid);
 
-      navigate("/dashboard");
+      navigate("/login");
     } catch (e) {
       console.error("Error adding document: ", e);
       setErrorMsg("Error creating user");
@@ -124,7 +124,6 @@ const SignUp = () => {
             <button
               type="submit"
               className="w-full bg-custom-black text-white rounded py-2 hover:text-custom-black hover:bg-white"
-                onClick={() => navigate("/login")}
             >
               Sign Up
             </button>
