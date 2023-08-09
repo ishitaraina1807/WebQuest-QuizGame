@@ -69,7 +69,7 @@ const SignUp = () => {
               <input
                 type="text"
                 id="name"
-                className="w-full bg-white text-white rounded px-3 py-2 focus:outline-0"
+                className="w-full bg-white text-custom-black rounded px-3 py-2 focus:outline-0"
                 value={values.name}
                 onChange={(event) =>
                   setValues((prev) => ({ ...prev, name: event.target.value }))
@@ -84,7 +84,7 @@ const SignUp = () => {
               <input
                 type="email"
                 id="email"
-                className="w-full bg-white text-white rounded px-3 py-2 focus:outline-0"
+                className="w-full bg-white text-custom-black rounded px-3 py-2 focus:outline-0"
                 value={values.email}
                 onChange={(event) =>
                   setValues((prev) => ({ ...prev, email: event.target.value }))
