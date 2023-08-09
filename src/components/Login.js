@@ -51,7 +51,7 @@ const LogIn = () => {
               <input
                 type="email"
                 id="email"
-                className="w-full bg-white text-white rounded px-3 py-2 focus:outline-0"
+                className="w-full bg-white text-custom-black rounded px-3 py-2 focus:outline-0"
                 value={values.email}
                 onChange={(event) =>
                   setValues((prev) => ({ ...prev, email: event.target.value }))
