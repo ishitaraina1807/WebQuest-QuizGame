@@ -124,6 +124,7 @@ const SignUp = () => {
             <button
               type="submit"
               className="w-full bg-custom-black text-white rounded py-2 hover:text-custom-black hover:bg-white"
+                onClick={() => navigate("/login")}
             >
               Sign Up
             </button>
