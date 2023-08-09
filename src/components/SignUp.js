@@ -99,7 +99,7 @@ const SignUp = () => {
               <input
                 type="password"
                 id="password"
-                className="w-full bg-white text-white rounded px-3 py-2 focus:outline-0"
+                className="w-full bg-white text-custom-black rounded px-3 py-2 focus:outline-0"
                 value={values.password}
                 onChange={(event) =>
                   setValues((prev) => ({
