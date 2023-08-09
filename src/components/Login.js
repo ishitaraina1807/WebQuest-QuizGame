@@ -60,7 +60,7 @@ const LogIn = () => {
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="password" className="block text-white font-bold mb-2">
+              <label htmlFor="password" className="block text-custom-black font-bold mb-2">
                 Password
               </label>
               <input
