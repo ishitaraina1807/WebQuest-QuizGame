@@ -114,6 +114,14 @@ hr{
   font-weight: bold;
   transition: 0.3s;
 }
+.features{
+  line-height: 3rem;
+  text-align: center;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+}
 
 @media screen and (max-width: 800px) {
   .container{
