@@ -19,7 +19,7 @@ function CssQuiz({ quizData }) {
               <hr/>
               <p><b>Your Score:</b> {score}</p>
               <p><b>Time Taken:</b> {timeTaken} seconds</p>
-              <Link to="/" className='show-button text-lg'>
+              <Link to="/quizzes" className='show-button text-lg'>
                   Restart Quiz
               </Link>
           </div>
