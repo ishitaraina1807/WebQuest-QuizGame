@@ -3,30 +3,23 @@
 body{
   background-color: #fff7f0;
   background-image: url(bg-intro.png);
-  background-size: fill;
+  background-size: cover;
   background-repeat: no-repeat;
   font-family: 'Noto Sans', sans-serif;
 }
-.container{
-  gap: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 6rem;
-}
 .container h1{
-max-width: 39rem;
+max-width: 40rem;
 font-weight: bolder;
 font-size: 3rem;
 line-height: 3rem;
 margin-bottom: 1rem;
-color: #292a29;
+color: white;
 }
 .container h2{
-  max-width: 39rem;
+  max-width: 48rem;
   font-size: 1.5rem;
   line-height: 1.8rem;
-  color: #989189;
+  color: rgb(213, 213, 213);
 }
 .section{
   margin-top: 0;

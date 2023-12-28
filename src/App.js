@@ -11,7 +11,7 @@ import quizData from './htmlsource.json';
 import cssquizData from './csssource.json';
 import jsquizData from './jssource.json';
 import Login from './components/Login';
-import AuthProvider from './AuthProvider'; 
+import AuthProvider from './Auth/AuthProvider'; 
 import SignUp from './components/SignUp';
 import Features from './components/Features';
 
