@@ -49,8 +49,8 @@ const SignUp = () => {
   return (
     <div className="p-6 text-white flex justify-center items-center min-h-screen">
       <div className="flex justify-center items-center h-full">
-        <div className="w-80 bg-custom-red p-6 rounded shadow">
-          <h1 className="text-2xl font-bold mb-6 text-center">Sign Up</h1>
+        <div className="w-[450px] p-6 rounded shadow">
+          <h1 className="text-2xl font-bold mb-6 text-center">Sign Up for Web Quest</h1>
           <form onSubmit={handleSignup}>
             <div className="mb-4">
               <label htmlFor="name" className="block text-white font-bold mb-2">
@@ -101,7 +101,7 @@ const SignUp = () => {
               />
             </div>
             <div className="flex justify-center items-center text-xs my-2">
-              <span className="text-gray-800">Already have an account?</span>
+              <span className="text-gray-400">Already have an account?</span>
               &nbsp;&nbsp;
               <span
                 className="text-white font-bold cursor-pointer hover:underline"
@@ -114,7 +114,7 @@ const SignUp = () => {
 
             <button
               type="submit"
-              className="w-full bg-custom-black text-white rounded py-2 hover:text-custom-black hover:bg-white"
+              className="w-full bg-[#CFD724] text-[#152039] rounded py-2 hover:text-custom-black hover:bg-white"
             >
               Sign Up
             </button>
