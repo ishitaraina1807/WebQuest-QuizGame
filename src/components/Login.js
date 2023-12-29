@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { AuthContext } from "../AuthContext";
+import { AuthContext } from "../Auth/AuthContext";
 import { auth } from "../firebase";
 
 const LogIn = () => {
@@ -41,8 +41,8 @@ const LogIn = () => {
   return (
     <div className="p-6 text-white flex justify-center items-center min-h-screen">
       <div className="flex justify-center items-center h-full">
-        <div className="w-80 bg-custom-red p-6 rounded shadow">
-          <h1 className="text-white text-2xl font-bold  mb-6 text-center">Login</h1>
+        <div className="w-[450px] bg-[#152039] p-6 rounded shadow">
+          <h1 className="text-white text-2xl font-bold  mb-6 text-center">Login to Web Quest</h1>
           <form onSubmit={handleLogin}>
             <div className="mb-4">
               <label htmlFor="email" className="block text-white font-bold mb-2">
@@ -78,7 +78,7 @@ const LogIn = () => {
               />
             </div>
             <div className="flex justify-center items-center text-xs my-2">
-              <span className="text-gray-600">Don't have an account?</span>&nbsp;&nbsp;
+              <span className="text-gray-400">Don't have an account?</span>&nbsp;&nbsp;
               <span
                 className="text-white font-bold cursor-pointer"
                 onClick={() => navigate("/signup")}
@@ -90,7 +90,7 @@ const LogIn = () => {
 
             <button
               type="submit"
-              className="w-full bg-custom-black text-white rounded py-2 hover:bg-white hover:text-custom-black"
+              className="w-full bg-[#CFD724] text-[#152039] rounded py-2 hover:bg-white hover:text-custom-black"
             >
               Login
             </button>
