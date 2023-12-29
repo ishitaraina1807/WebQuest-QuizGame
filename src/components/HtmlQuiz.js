@@ -14,7 +14,7 @@ function HtmlQuiz({ quizData }) {
         const timeTaken = (endTime - startTime) / 1000; // Convert to seconds
 
         return (
-            <div className='bg-[#f5f5f5] p-14 rounded-xl shadow-lg'>
+            <div className='bg-[#F5F5F5] p-14 rounded-xl shadow-lg'>
                 <h2 className='text-[#152039] text-lg text-center font-bold mb-4'>Quiz Result</h2>
                 <hr/>
                 <div className='flex flex-col mt-4 gap-4 text-center text-2xl'>
@@ -91,7 +91,7 @@ function HtmlQuiz({ quizData }) {
                 </div>
             ) : (
                 // {currentQuestion && (
-                <div className='mx-auto bg-transparent bg-[#F5F5F5] rounded-xl px-16 py-8 shadow-lg w-[700px]'>
+                <div className='mx-auto bg-transparent bg-white rounded-xl px-16 py-8 shadow-lg w-[700px]'>
                     <p className='text-center text-[#152039] text-lg'>
                         <b> Question:{questionLabels[currentQuestionIndex]}/10 </b>
                     </p>
