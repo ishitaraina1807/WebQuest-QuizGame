@@ -25,6 +25,12 @@ export default class NavBar extends Component {
                 >
                   Features
                 </Link>
+                <Link
+                  to="/quizzes"
+                  className="text-white text-xl hover:underline rounded-md px-3 py-2 text-sm font-medium"
+                >
+                  Category
+                </Link>
               </div>
             </div>
           </div>

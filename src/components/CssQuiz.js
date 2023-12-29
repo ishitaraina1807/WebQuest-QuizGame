@@ -91,7 +91,7 @@ function CssQuiz({ quizData }) {
                 </div>
             ) : (
                 // {currentQuestion && (
-                <div className='mx-auto bg-transparent bg-[#F5F5F5] rounded-xl px-16 py-8 shadow-lg w-[700px]'>
+                <div className='mx-auto bg-transparent bg-gray-100 rounded-xl px-16 py-8 shadow-lg w-[700px]'>
                     <p className='text-center text-[#152039] text-lg'>
                         <b> Question:{questionLabels[currentQuestionIndex]}/10 </b>
                     </p>
