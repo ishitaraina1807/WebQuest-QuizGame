@@ -14,12 +14,29 @@ import Login from './components/Login';
 import AuthProvider from './Auth/AuthProvider'; 
 import SignUp from './components/SignUp';
 import Features from './components/Features';
+import BoltLoader from './components/Loader';
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading (true);
+    setTimeout(() => {
+      setLoading(false);
+    },4000)
+
+  }, []);
   return (
     <div>
+            {
+        loading ? 
+        <div style={{minHeight:"100vh", width: "100%", display:"flex",justifyContent:"center",alignItems:"center"}}>
+          <BoltLoader />
+        </div>
+        :
+        <>
       <NavBar />
-      <div className='app'>
+      <div>
         <AuthProvider> 
           <Routes>
             <Route path="/" element={<Introduction />} />
@@ -32,7 +49,9 @@ function App() {
             <Route path="/signup" element={<SignUp/>} />
           </Routes>
         </AuthProvider>
-      </div>
+         </div>
+      </>
+}
     </div>
   );
 }
