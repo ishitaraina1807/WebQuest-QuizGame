@@ -9,7 +9,7 @@ export default class NavBar extends Component {
         <nav className='border-b '>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 relative flex h-16 items-center justify-between">
             <div className="flex flex-shrink-0 items-center">
-              <h1 className='text-white text-2xl'>Web Quest</h1>
+              <a href="/"><h1 className='text-white text-2xl'>Web Quest</h1><a>
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
