@@ -23,15 +23,17 @@ To run TestWebD locally, follow these steps:
 4. Set up Firebase:
     - Create a Firebase project at [Firebase Console](https://console.firebase.google.com/)
     - Enable Google authentication in Firebase Authentication
-    - Create a `.env` file at the root of your project and add your Firebase configuration. Example:
-    ```
-    REACT_APP_FIREBASE_API_KEY=your_api_key
-    REACT_APP_FIREBASE_AUTH_DOMAIN=your_auth_domain
-    REACT_APP_FIREBASE_PROJECT_ID=your_project_id
-    REACT_APP_FIREBASE_STORAGE_BUCKET=your_storage_bucket
-    REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
-    REACT_APP_FIREBASE_APP_ID=your_app_id
-    ```
+  ### Replace the dummy firebase credentials in firebase.js file with your real firebase credentials
+```bash
+  apiKey: " AIzaSyD-4",
+  authDomain: " medcare-72185.firebaseapp.com",
+  projectId: "medcare-72185",
+  storageBucket: "medcare-72185.appspot.com",
+  messagingSenderId: "252642172466",
+  appId: "1:252642172465:web:1a4c1b",
+  measurementId: "G-4"
+```
+  ### You can refer a tutorial on how to get the firebase credentials [here](https://www.youtube.com/watch?v=ZTHdCMj3jP8)
 5. Start the development server: `npm start`
 6. Open your browser and visit `http://localhost:3000` to view TestWebD.
 

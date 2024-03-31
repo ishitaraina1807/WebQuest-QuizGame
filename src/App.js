@@ -11,7 +11,6 @@ import quizData from './htmlsource.json';
 import cssquizData from './csssource.json';
 import jsquizData from './jssource.json';
 import Login from './components/Login';
-import AuthProvider from './Auth/AuthProvider'; 
 import SignUp from './components/SignUp';
 import Features from './components/Features';
 import BoltLoader from './components/Loader';
@@ -37,7 +36,6 @@ function App() {
         <>
       <NavBar />
       <div>
-        <AuthProvider> 
           <Routes>
             <Route path="/" element={<Introduction />} />
             <Route path="/features" element={<Features />} />
@@ -48,7 +46,6 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp/>} />
           </Routes>
-        </AuthProvider>
          </div>
       </>
 }
