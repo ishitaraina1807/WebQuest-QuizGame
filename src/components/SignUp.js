@@ -1,128 +1,65 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  auth,
+  registerWithEmailAndPassword,
+  signInWithGoogle,
+} from "../firebase";
+import "../components/signup.css";
 
-import { auth, db } from "../firebase";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { doc, setDoc } from "firebase/firestore";
-
-const SignUp = () => {
+function SignUp() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
-
-  const [values, setValues] = useState({
-    name: "",
-    email: "",
-    password: "",
-  });
-
-  const [errorMsg, setErrorMsg] = useState("");
-
-  const handleSignup = async (e) => {
-    e.preventDefault();
-
-    if (values.name === "" || values.email === "" || values.password === "") {
-      return;
-    }
-    setErrorMsg("");
- 
-
-    try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        values.email,
-        values.password
-      );
-
-      const user = userCredential.user;
-      await updateProfile(user, {
-        displayName: values.name,
-      });
-      console.log("New user created with credentials : ", user);
-
-      
-    } catch (e) {
-      console.error("Error adding document: ", e);
-      setErrorMsg("Already Signed UP");
-      navigate("/login");
-    }
+  const register = () => {
+    if (!name) alert("Please enter name");
+    registerWithEmailAndPassword(name, email, password);
   };
-
+  useEffect(() => {
+    if (loading) return;
+    if (user) navigate("/home");
+  }, [user, loading,navigate]);
   return (
-    <div className="p-6 text-white flex justify-center items-center min-h-screen">
-      <div className="flex justify-center items-center h-full">
-        <div className="w-[450px] p-6 rounded shadow">
-          <h1 className="text-2xl font-bold mb-6 text-center">Sign Up for Web Quest</h1>
-          <form onSubmit={handleSignup}>
-            <div className="mb-4">
-              <label htmlFor="name" className="block text-white font-bold mb-2">
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                className="w-full bg-white text-custom-black rounded px-3 py-2 focus:outline-0"
-                value={values.name}
-                onChange={(event) =>
-                  setValues((prev) => ({ ...prev, name: event.target.value }))
-                }
-                required
-              />
-            </div>
-            <div className="mb-4">
-              <label htmlFor="email" className="block text-white font-bold mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                className="w-full bg-white text-custom-black rounded px-3 py-2 focus:outline-0"
-                value={values.email}
-                onChange={(event) =>
-                  setValues((prev) => ({ ...prev, email: event.target.value }))
-                }
-                required
-              />
-            </div>
-            <div className="mb-4">
-              <label htmlFor="password" className="block text-white font-bold mb-2">
-                Password
-              </label>
-              <input
-                type="password"
-                id="password"
-                className="w-full bg-white text-custom-black rounded px-3 py-2 focus:outline-0"
-                value={values.password}
-                onChange={(event) =>
-                  setValues((prev) => ({
-                    ...prev,
-                    password: event.target.value,
-                  }))
-                }
-                required
-              />
-            </div>
-            <div className="flex justify-center items-center text-xs my-2">
-              <span className="text-gray-400">Already have an account?</span>
-              &nbsp;&nbsp;
-              <span
-                className="text-white font-bold cursor-pointer hover:underline"
-                onClick={() => navigate("/login")}
-              >
-                Login
-              </span>
-            </div>
-            {errorMsg && <p className="text-red-800 mt-2 mb-2 text-sm flex justify-center">{errorMsg}</p>}
-
-            <button
-              type="submit"
-              className="w-full bg-[#CFD724] text-[#152039] rounded py-2 hover:text-custom-black hover:bg-white"
-            >
-              Sign Up
-            </button>
-          </form>
+    <div className="register">
+      <div className="register__container">
+        <input
+          type="text"
+          className="register__textBox"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Full Name"
+        />
+        <input
+          type="text"
+          className="register__textBox"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="E-mail Address"
+        />
+        <input
+          type="password"
+          className="register__textBox"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
+        />
+        <button className="register__btn" onClick={register}>
+          Sign Up
+        </button>
+        <button
+          className="register__btn register__google"
+          onClick={signInWithGoogle}
+        >
+          Sign Up with Google
+        </button>
+        <div>
+          Already have an account? <Link to="/login">Login</Link> now.
         </div>
       </div>
     </div>
   );
-};
-
+}
 export default SignUp;

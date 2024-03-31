@@ -1,104 +1,51 @@
-import React, { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
-
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { AuthContext } from "../Auth/AuthContext";
-import { auth } from "../firebase";
-
-const LogIn = () => {
-    const navigate = useNavigate();
-    const { dispatch } = useContext(AuthContext);
-
-  const [values, setValues] = useState({
-    email: "",
-    password: "",
-  });
-
-  const [errorMsg, setErrorMsg] = useState("");
-
-  const handleLogin = (e) => {
-    e.preventDefault();
-
-    if (values.email === "" || values.password === "") {
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { auth,logInWithEmailAndPassword, signInWithGoogle } from "../firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
+import "../components/login.css";
+function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [user, loading] = useAuthState(auth);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (loading) {
+      // maybe trigger a loading screen
       return;
     }
-
-    setErrorMsg("");
-
-    signInWithEmailAndPassword(auth, values.email, values.password)
-      .then(async (userCredential) => {
-        const user = userCredential.user;
-        console.log("User logged in with credentials : ",user);
-        dispatch({ type: "LOGIN", payload: user });
-        navigate("/quizzes");
-      })
-      .catch((e) => {
-        console.error("Error logging in : ",e)
-        setErrorMsg("Error logging in");
-      });
-  };
-
+    if (user) navigate("/dashboard");
+  }, [user, loading,navigate]);
   return (
-    <div className="p-6 text-white flex justify-center items-center min-h-screen">
-      <div className="flex justify-center items-center h-full">
-        <div className="w-[450px] bg-[#152039] p-6 rounded shadow">
-          <h1 className="text-white text-2xl font-bold  mb-6 text-center">Login to Web Quest</h1>
-          <form onSubmit={handleLogin}>
-            <div className="mb-4">
-              <label htmlFor="email" className="block text-white font-bold mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                className="w-full bg-white text-custom-black rounded px-3 py-2 focus:outline-0"
-                value={values.email}
-                onChange={(event) =>
-                  setValues((prev) => ({ ...prev, email: event.target.value }))
-                }
-                required
-              />
-            </div>
-            <div className="mb-4">
-              <label htmlFor="password" className="block text-white font-bold mb-2">
-                Password
-              </label>
-              <input
-                type="password"
-                id="password"
-                className="w-full bg-white text-custom-black rounded px-3 py-2 focus:outline-0"
-                value={values.password}
-                onChange={(event) =>
-                  setValues((prev) => ({
-                    ...prev,
-                    password: event.target.value,
-                  }))
-                }
-                required
-              />
-            </div>
-            <div className="flex justify-center items-center text-xs my-2">
-              <span className="text-gray-400">Don't have an account?</span>&nbsp;&nbsp;
-              <span
-                className="text-white font-bold cursor-pointer"
-                onClick={() => navigate("/signup")}
-              >
-                Sign Up
-              </span>
-            </div>
-            {errorMsg && <p className="text-red-500 mt-2 mb-2 text-sm flex justify-center">{errorMsg}</p>}
-
-            <button
-              type="submit"
-              className="w-full bg-[#CFD724] text-[#152039] rounded py-2 hover:bg-white hover:text-custom-black"
-            >
-              Login
-            </button>
-          </form>
+    <div className="login">
+      <div className="login__container">
+        <input
+          type="text"
+          className="login__textBox"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="E-mail Address"
+        />
+        <input
+          type="password"
+          className="login__textBox"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
+        />
+        <button
+          className="login__btn"
+          onClick={() => logInWithEmailAndPassword(email, password)}
+        >
+          Login
+        </button>
+        <button className="login__btn login__google" onClick={signInWithGoogle}>
+          Login with Google
+        </button>
+        <div>
+          Don't have an account? <Link to="/signup"> Sign Up </Link> now.
         </div>
       </div>
     </div>
   );
-};
-
-export default LogIn;
+}
+export default Login;
