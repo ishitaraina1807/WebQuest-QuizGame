@@ -15,9 +15,9 @@
       "correctAnswer": "<ul>"
     },
     {
-      "question": "Which of the following HTML Elements is used for making any text bold?",
-      "options": ["<p>", "<i>", "<li>", "<b>"],
-      "correctAnswer": "<b>"
+      "question": "Which of the following HTML Elements is used for making any text Italic?",
+      "options": ["<p>", "<i>", "<Italic>", "<b>"],
+      "correctAnswer": "<i>"
     },
     {
       "question": "Which of the following characters indicate closing of a tag? ",
